@@ -1,39 +1,25 @@
 # GitHub User Activity CLI
 
-A simple **Node.js command‑line application** that fetches and displays a GitHub user's recent activity using the GitHub public API. This project demonstrates CLI design, API consumption, error handling, and asynchronous JavaScript execution.
+A Node.js **command-line interface (CLI)** that fetches and displays **recent public activity** for a GitHub user using the **GitHub Events API**. The tool accepts a GitHub username as input and prints a readable summary of the user’s latest activity directly in the terminal.
 
 Project from https://roadmap.sh/projects/github-user-activity
 
----
+## Prerequisites
 
-<div align="center">
+- Node.js runtime
 
-![Node.js](https://img.shields.io/badge/Node.js-25.x-green?style=for-the-badge&logo=node.js)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript)
-![GitHub API](https://img.shields.io/badge/GitHub-API-black?style=for-the-badge&logo=github)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+## Installation
 
-</div>
+1. **Clone the repository**
 
----
-
-## 📚 Table of Contents
-
-1. Quick Start
-2. Features
-3. Project Structure
-4. How It Works
-5. CLI Usage
-6. Tech Stack
-7. License
-
----
-
-## 🚀 Quick Start
-
-Install dependencies:
-
+```bash
+git clone <repository-url>
+cd github-user-activity
 ```
+
+2. **Install dependencies**
+
+```bash
 npm install
 ```
 

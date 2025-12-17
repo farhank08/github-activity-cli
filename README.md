@@ -1,115 +1,72 @@
-# 🧰 GitHub User Activity CLI
+# GitHub User Activity CLI
 
-A simple **Node.js command‑line application** that fetches and displays a GitHub user's recent activity using the GitHub public API. This project demonstrates CLI design, API consumption, error handling, and asynchronous JavaScript execution.
+A Node.js **command-line interface (CLI)** that fetches and displays **recent public activity** for a GitHub user using the **GitHub Events API**. The tool accepts a GitHub username as input and prints a readable summary of the user’s latest activity directly in the terminal.
 
----
+Project from https://roadmap.sh/projects/github-user-activity
 
-<div align="center">
+## Prerequisites
 
-![Node.js](https://img.shields.io/badge/Node.js-25.x-green?style=for-the-badge&logo=node.js)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript)
-![GitHub API](https://img.shields.io/badge/GitHub-API-black?style=for-the-badge&logo=github)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+- Node.js runtime
 
-</div>
+## Installation
 
----
+1. **Clone the repository**
 
-## 📚 Table of Contents
-
-1. Quick Start
-2. Features
-3. Project Structure
-4. How It Works
-5. CLI Usage
-6. Tech Stack
-7. License
-
----
-
-## 🚀 Quick Start
-
-Install dependencies:
-
+```bash
+git clone <repository-url>
+cd github-user-activity
 ```
+
+2. **Install dependencies**
+
+```bash
 npm install
 ```
 
-Run the CLI:
+## Running the Application
 
-```
-node index.js <github_username>
-```
+Run the CLI by providing a GitHub username:
 
-Example:
-
-```
-node index.js farhank08
+```bash
+node index.js <username>
 ```
 
----
+### Arguments
 
-## ✨ Features
+- `<username>` – GitHub username whose recent activity should be retrieved
 
-- Fetches real‑time GitHub activity
-- Uses GitHub Events API
-- Proper error handling for invalid users or network issues
-- Clean async/await structure
-- Minimal, fast, and dependency‑light CLI tool
+If no username is provided, the CLI exits with an error message.
 
----
+## Example Usage
 
-## 📂 Project Structure
-
-```
-GitHub User Activity CLI/
-├─ index.js
-└─ package.json
+```bash
+node index.js octocat
 ```
 
----
+This command fetches and displays the most recent public events performed by the specified GitHub user.
 
-## 🔧 How It Works
+## How It Works
 
-1. Reads the GitHub username from `process.argv`.
-2. Sends a GET request to GitHub’s public events API:  
-   `https://api.github.com/users/<username>/events`
-3. Parses and logs each event (commits, issues, pushes, etc.).
-4. Handles rate limits, missing users, and errors gracefully.
+- The CLI calls GitHub’s public **Events API** for the given user
+- The response is parsed and filtered into a human-readable format
+- Different event types are displayed with concise summaries
 
----
+## Output
 
-# 📘 CLI Usage
+The CLI displays recent activity such as:
 
-### **Command Format**
+- Repository pushes
+- Issue and pull request activity
+- Repository creation and other public events
 
-| Command                    | Description                               |
-| -------------------------- | ----------------------------------------- |
-| `node index.js <username>` | Fetches GitHub event history for the user |
+Output is printed directly to standard output for easy inspection.
 
-### Example Output
+## Notes
 
-```
-Recent activity for torvalds:
-- Pushed to repo linux
-- Created branch topic/arm-fixes
-- Commented on issue #12345
-...
-```
+- This project does not require authentication for basic usage
+- Results are subject to GitHub API rate limits
+- Designed as a minimal CLI utility for inspecting GitHub user activity
 
----
+## License
 
-## 🧱 Tech Stack
-
-| Layer          | Technology           |
-| -------------- | -------------------- |
-| Runtime        | Node.js              |
-| HTTP Client    | Native fetch / HTTPS |
-| Input Handling | Node process.argv    |
-| Output         | Console logging      |
-
----
-
-## 📜 License
-
-MIT License — free for educational and portfolio use.
+This project is licensed under the ISC License.
